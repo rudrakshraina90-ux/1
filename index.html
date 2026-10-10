@@ -174,7 +174,7 @@ nav a{white-space:nowrap;padding:10px 12px;font-size:12px;letter-spacing:.07em}
 .cc select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:0;padding:0;font-size:16px}
 .cc:focus-within{outline:2px solid var(--blue);outline-offset:1px}
 /* 404 */
-.nf{position:relative;overflow:hidden;min-height:70vh;display:flex;align-items:center;padding:56px 0;border-bottom:3px solid var(--gold);background:radial-gradient(900px 520px at 85% 0,#25508F 0,transparent 62%),linear-gradient(160deg,#0B2447,#102F5E 55%,#0B2447)}
+.nf{position:relative;overflow:hidden;min-height:calc(70vh / var(--z,1));display:flex;align-items:center;padding:56px 0;border-bottom:3px solid var(--gold);background:radial-gradient(900px 520px at 85% 0,#25508F 0,transparent 62%),linear-gradient(160deg,#0B2447,#102F5E 55%,#0B2447)}
 .nf>.w{position:relative;width:100%}
 .nfmap{position:absolute;right:max(2%,calc(50% - 620px));top:50%;transform:translateY(-50%);height:112%;max-height:680px;width:auto;opacity:.2;pointer-events:none}
 .nfmap polygon{fill:#D4B27A24;stroke:#D4B27A;stroke-width:1.4;stroke-linejoin:round}
@@ -182,6 +182,15 @@ nav a{white-space:nowrap;padding:10px 12px;font-size:12px;letter-spacing:.07em}
 .n4{font:600 clamp(5.5rem,20vw,12rem)/.9 'Playfair Display',Georgia,serif;letter-spacing:-.03em;margin:4px 0 14px;background:linear-gradient(180deg,#F0DDB8,#C9A770 58%,#8E6F34);-webkit-background-clip:text;background-clip:text;color:transparent}
 .nfc h1{font-size:clamp(1.8rem,4vw,2.6rem)}.nfl{margin-top:22px}.nfl a{display:inline-block;padding:8px 2px;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.nfmap{opacity:.12;right:-20%}.nf{min-height:62vh}}
+
+/* large screens: scale the whole layout up so it fills 1080p / 1440p / 4K monitors instead of floating in the middle */
+@media(min-width:1650px){:root{--z:1.15}html{zoom:1.15}}
+@media(min-width:1900px){:root{--z:1.3}html{zoom:1.3}}
+@media(min-width:2200px){:root{--z:1.55}html{zoom:1.55}}
+@media(min-width:2500px){:root{--z:1.75}html{zoom:1.75}}
+@media(min-width:2900px){:root{--z:2}html{zoom:2}}
+@media(min-width:3400px){:root{--z:2.35}html{zoom:2.35}}
+@media(min-width:3800px){:root{--z:2.6}html{zoom:2.6}}
 </style></head><body>
 <header><div class="w hb"><a class="logo" href="#/home" aria-label="MKB Corporation, home"><span class="mk" aria-hidden="true">MKB</span><span class="lt"><b>MKB Corporation</b><small>Research. Evaluate. Invest Better.</small></span></a><button id="mb" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button><nav id="nav" aria-label="Main"></nav></div></header>
 <main id="app" tabindex="-1"></main>
